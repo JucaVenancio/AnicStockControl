@@ -61,21 +61,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseStockDataSet.Designer.cs">
+    <Compile Include="DataBase\DataBaseStockDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBaseStockDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Screens\HomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Screens\HomeScreen.Designer.cs">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\HomeScreen.resx">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,16 +85,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataBaseStockDataSet.xsc">
+    <None Include="DataBase\DataBaseStockDataSet.xsc">
       <DependentUpon>DataBaseStockDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataBaseStockDataSet.xsd">
+    <None Include="DataBase\DataBaseStockDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataBaseStockDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataBaseStockDataSet.xss">
+    <None Include="DataBase\DataBaseStockDataSet.xss">
       <DependentUpon>DataBaseStockDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -111,10 +112,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBaseStock.mdf">
+    <Content Include="DataBase\DataBaseStock.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DataBaseStock_log.ldf">
+    <Content Include="DataBase\DataBaseStock_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DataBaseStock.mdf</DependentUpon>
     </Content>
@@ -130,6 +131,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Screens\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

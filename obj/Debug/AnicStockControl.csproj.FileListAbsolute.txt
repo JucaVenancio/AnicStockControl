@@ -1,12 +1,13 @@
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\DataBaseStock.mdf
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\DataBaseStock_log.ldf
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\AnicStockControl.exe.config
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\AnicStockControl.exe
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\AnicStockControl.pdb
+C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\DataBase\DataBaseStock.mdf
+C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\DataBase\DataBaseStock_log.ldf
+C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\AnicStockControl.exe.config
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.csproj.AssemblyReference.cache
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.csproj.SuggestedBindingRedirects.cache
+C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.HomeScreen.resources
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.Properties.Resources.resources
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.csproj.GenerateResource.cache
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.csproj.CoreCompileInputs.cache
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.exe
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.pdb
+C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\AnicStockControl.pdb
