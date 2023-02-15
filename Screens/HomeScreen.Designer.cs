@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using AnicStockControl.Entities;
+using System.Windows.Forms;
 
 namespace AnicStockControl
 {
@@ -36,7 +37,9 @@ namespace AnicStockControl
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
+            this.BtnLogin = new System.Windows.Forms.Button();
+            this.BtnNewUser = new System.Windows.Forms.Button();
+            this.BtnChangePassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login
@@ -102,21 +105,44 @@ namespace AnicStockControl
             this.PasswordLabel.TabIndex = 5;
             this.PasswordLabel.Text = "PASSWORD";
             // 
-            // LoginButton
+            // BtnLogin
             // 
-            this.LoginButton.BackColor = System.Drawing.Color.Transparent;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LoginButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LoginButton.Location = new System.Drawing.Point(261, 416);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(127, 39);
-            this.LoginButton.TabIndex = 6;
-            this.LoginButton.Text = "ENTER";
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            this.BtnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.BtnLogin.FlatAppearance.BorderSize = 0;
+            this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnLogin.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnLogin.Location = new System.Drawing.Point(261, 416);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(127, 39);
+            this.BtnLogin.TabIndex = 6;
+            this.BtnLogin.Text = "ENTER";
+            this.BtnLogin.UseVisualStyleBackColor = false;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
+            // BtnNewUser
+            // 
+            this.BtnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNewUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BtnNewUser.Location = new System.Drawing.Point(41, 447);
+            this.BtnNewUser.Name = "BtnNewUser";
+            this.BtnNewUser.Size = new System.Drawing.Size(114, 41);
+            this.BtnNewUser.TabIndex = 7;
+            this.BtnNewUser.Text = "NEW USER";
+            this.BtnNewUser.UseVisualStyleBackColor = true;
+            // 
+            // BtnChangePassword
+            // 
+            this.BtnChangePassword.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BtnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnChangePassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BtnChangePassword.Location = new System.Drawing.Point(723, 447);
+            this.BtnChangePassword.Name = "BtnChangePassword";
+            this.BtnChangePassword.Size = new System.Drawing.Size(114, 41);
+            this.BtnChangePassword.TabIndex = 8;
+            this.BtnChangePassword.Text = "CHANGE PASSWORD";
+            this.BtnChangePassword.UseVisualStyleBackColor = false;
+            //
             // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -125,7 +151,9 @@ namespace AnicStockControl
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(876, 500);
-            this.Controls.Add(this.LoginButton);
+            this.Controls.Add(this.BtnChangePassword);
+            this.Controls.Add(this.BtnNewUser);
+            this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.PasswordTextBox);
@@ -148,13 +176,16 @@ namespace AnicStockControl
         }
 
         #endregion
-
+         
         private Label Login;
         private TextBox UsernameTextBox;
         private TextBox PasswordTextBox;
         private Label UsernameLabel;
         private Label PasswordLabel;
-        private Button LoginButton;
+        private Button BtnLogin;
+        private Button BtnNewUser;
+        private Button BtnChangePassword;
+        private Users User;
     }
 }
 

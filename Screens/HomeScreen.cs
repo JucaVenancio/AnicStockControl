@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AnicStockControl.DataBase;
+using AnicStockControl.DataBase.DataBaseStockDataSetTableAdapters;
+using AnicStockControl.Entities;
+using AnicStockControl.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,10 +27,23 @@ namespace AnicStockControl
 
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
+            User = new Users { Username = UsernameTextBox.Text, Password = PasswordTextBox.Text };
             
+            try
+            {
 
+                User.Login_Validation(User.Username, User.Password);
+                MessageBox.Show("Deu certo");
+            }
+            catch(LoginException ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
         }
+
     }
 }

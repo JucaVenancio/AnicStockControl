@@ -61,11 +61,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase\DataBaseStockDataSet.cs">
+      <DependentUpon>DataBaseStockDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\DataBaseStockDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBaseStockDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Users.cs" />
+    <Compile Include="Exceptions\LoginException.cs" />
     <Compile Include="Screens\HomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
