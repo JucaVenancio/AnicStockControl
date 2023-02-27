@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AnicStockControl.Screens;
+using System;
 using System.Windows.Forms;
 
 namespace AnicStockControl
@@ -14,9 +12,9 @@ namespace AnicStockControl
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeScreen());
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new StartupScreen());
         }
     }
 }

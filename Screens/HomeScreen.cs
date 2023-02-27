@@ -1,15 +1,7 @@
-﻿using AnicStockControl.DataBase;
-using AnicStockControl.DataBase.DataBaseStockDataSetTableAdapters;
-using AnicStockControl.Entities;
+﻿using AnicStockControl.Entities;
 using AnicStockControl.Exceptions;
+using AnicStockControl.Screens;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AnicStockControl
@@ -19,31 +11,44 @@ namespace AnicStockControl
         public HomeScreen()
         {
             InitializeComponent();
-   
-        }
-
-        private void HomeScreen_Load(object sender, EventArgs e)
-        {
 
         }
+
+
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             User = new Users { Username = UsernameTextBox.Text, Password = PasswordTextBox.Text };
-            
+            string MessageError = "";
+
             try
             {
 
-                User.Login_Validation(User.Username, User.Password);
+                if(!User.Login_Validation(ref MessageError))
+                {
+                   throw new LoginException(MessageError);
+                }
                 MessageBox.Show("Deu certo");
             }
-            catch(LoginException ex) 
+            catch (LoginException ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            
+
         }
 
+        private void BtnNewUser_Click(object sender, EventArgs e)
+        {
+            
+            CreateNewUser createNewUsser =  new CreateNewUser();
+            createNewUsser.Show();
+            this.Close();
+        }
+
+        private void BtnChangePassword_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

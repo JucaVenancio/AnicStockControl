@@ -38,8 +38,8 @@ namespace AnicStockControl
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
-            this.BtnNewUser = new System.Windows.Forms.Button();
             this.BtnChangePassword = new System.Windows.Forms.Button();
+            this.BtnNewUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login
@@ -120,17 +120,6 @@ namespace AnicStockControl
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
-            // BtnNewUser
-            // 
-            this.BtnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNewUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtnNewUser.Location = new System.Drawing.Point(41, 447);
-            this.BtnNewUser.Name = "BtnNewUser";
-            this.BtnNewUser.Size = new System.Drawing.Size(114, 41);
-            this.BtnNewUser.TabIndex = 7;
-            this.BtnNewUser.Text = "NEW USER";
-            this.BtnNewUser.UseVisualStyleBackColor = true;
-            // 
             // BtnChangePassword
             // 
             this.BtnChangePassword.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -142,7 +131,20 @@ namespace AnicStockControl
             this.BtnChangePassword.TabIndex = 8;
             this.BtnChangePassword.Text = "CHANGE PASSWORD";
             this.BtnChangePassword.UseVisualStyleBackColor = false;
-            //
+            this.BtnChangePassword.Click += new System.EventHandler(this.BtnChangePassword_Click);
+            // 
+            // BtnNewUser
+            // 
+            this.BtnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNewUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BtnNewUser.Location = new System.Drawing.Point(41, 447);
+            this.BtnNewUser.Name = "BtnNewUser";
+            this.BtnNewUser.Size = new System.Drawing.Size(114, 41);
+            this.BtnNewUser.TabIndex = 7;
+            this.BtnNewUser.Text = "NEW USER";
+            this.BtnNewUser.UseVisualStyleBackColor = true;
+            this.BtnNewUser.Click += new System.EventHandler(this.BtnNewUser_Click);
+            // 
             // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -169,7 +171,6 @@ namespace AnicStockControl
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anic Stock Control";
-            this.Load += new System.EventHandler(this.HomeScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,9 +184,9 @@ namespace AnicStockControl
         private Label UsernameLabel;
         private Label PasswordLabel;
         private Button BtnLogin;
-        private Button BtnNewUser;
         private Button BtnChangePassword;
         private Users User;
+        private Button BtnNewUser;
     }
 }
 

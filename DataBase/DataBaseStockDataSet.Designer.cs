@@ -950,24 +950,35 @@ SELECT id_user, first_name, last_name, username, password FROM users WHERE (id_u
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_user, first_name, last_name, username, password FROM dbo.users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "dbo.login_validation";
+            this._commandCollection[1].CommandText = "dbo.insert_or_change_users";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_user", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_name", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@last_name", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 256, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@flag", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 3, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "dbo.username_validation";
+            this._commandCollection[2].CommandText = "dbo.login_validation";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 256, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "dbo.username_validation";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -999,7 +1010,7 @@ SELECT id_user, first_name, last_name, username, password FROM users WHERE (id_u
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int Login_Validation(DataBaseStockDataSet.usersDataTable dataTable, string username, string password) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((username == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1024,7 +1035,7 @@ SELECT id_user, first_name, last_name, username, password FROM users WHERE (id_u
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataBaseStockDataSet.usersDataTable GetDataBy1(string username, string password) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((username == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1047,7 +1058,7 @@ SELECT id_user, first_name, last_name, username, password FROM users WHERE (id_u
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int Username_Validation(DataBaseStockDataSet.usersDataTable dataTable, string username) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((username == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1274,6 +1285,64 @@ SELECT id_user, first_name, last_name, username, password FROM users WHERE (id_u
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string first_name, string last_name, string username, byte[] password, int Original_id_user, string Original_first_name, string Original_last_name, string Original_username, byte[] Original_password) {
             return this.Update(first_name, last_name, username, password, Original_id_user, Original_first_name, Original_last_name, Original_username, Original_password, Original_id_user);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Insert_or_Change_Users(global::System.Nullable<int> id_user, string first_name, string last_name, string username, string password, global::System.Nullable<byte> flag) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((id_user.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(id_user.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((first_name == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(first_name));
+            }
+            if ((last_name == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(last_name));
+            }
+            if ((username == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(username));
+            }
+            if ((password == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(password));
+            }
+            if ((flag.HasValue == true)) {
+                command.Parameters[6].Value = ((byte)(flag.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
