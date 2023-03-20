@@ -185,7 +185,6 @@ namespace AnicStockControl
         private Label PasswordLabel;
         private Button BtnLogin;
         private Button BtnChangePassword;
-        private Users User;
         private Button BtnNewUser;
     }
 }

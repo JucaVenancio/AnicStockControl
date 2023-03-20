@@ -29,22 +29,33 @@ namespace AnicStockControl.Screens
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            Users user = new Users { First_name = NameTextBox.Text, Last_name = NameTextBox.Text, Username = UsernameTextBox.Text, Password = PasswordTextBox.Text };
+            /*Users user = new Users { First_name = NameTextBox.Text, Last_name = LastNameTextBox.Text, Username = UsernameTextBox.Text, Password = PasswordTextBox.Text };
             string MessageError = "";
 
             try
             {
+
+
                 if (user.Insert_or_Change_Users(ref MessageError))
                 {
                     MessageBox.Show("Usuário cadastrado com sucesso!");
                 }
-                throw new LoginException(MessageError);
+                else
+                {
+                    throw new LoginException(MessageError);
+                }
             }
             catch (LoginException ex)
             {
                 ErrorLabel.Text = ex.Message;
                 ErrorLabel.Visible = true;
-            }
+            }*/
+        }
+
+        private void CreateNewUser_Load(object sender, EventArgs e)
+        {
+        
+
         }
     }
 }

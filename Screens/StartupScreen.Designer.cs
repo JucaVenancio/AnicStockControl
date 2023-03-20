@@ -83,6 +83,7 @@ namespace AnicStockControl.Screens
             this.BtnNewUser.TabIndex = 9;
             this.BtnNewUser.Text = "NEW USER";
             this.BtnNewUser.UseVisualStyleBackColor = true;
+            this.BtnNewUser.Click += new System.EventHandler(this.BtnNewUser_Click);
             // 
             // StartupScreen
             // 

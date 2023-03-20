@@ -8,5 +8,7 @@ namespace AnicStockControl.Exceptions
         {
 
         }
+
+
     }
 }

@@ -18,23 +18,23 @@ namespace AnicStockControl
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            User = new Users { Username = UsernameTextBox.Text, Password = PasswordTextBox.Text };
-            string MessageError = "";
-
+            User user = new User { Username = UsernameTextBox.Text, Password = PasswordTextBox.Text };
             try
             {
-
-                if(!User.Login_Validation(ref MessageError))
+                if (user.Login_Validation())
                 {
-                   throw new LoginException(MessageError);
+                    MessageBox.Show("Deu certo!");
+
+
                 }
-                MessageBox.Show("Deu certo");
-            }
-            catch (LoginException ex)
+                else
+                {
+                    MessageBox.Show("Deu errado!");
+                }
+             }catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message);
             }
-
 
         }
 
