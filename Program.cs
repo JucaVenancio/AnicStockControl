@@ -15,12 +15,7 @@ namespace AnicStockControl
         //[STAThread]
         static void Main()
         {
-            IServiceCollection services = new ServiceCollection();
-            IConfiguration configuration = new ConfigurationBuilder()
-            .SetBasePath(Application.StartupPath).Build();
-
-            services.AddDbContext<AnicStockControlContext>(options => options.UseMySQL(configuration.GetConnectionString("MySQLConnectionString")));
-
+           
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new StartupScreen());

@@ -2,25 +2,19 @@
 using System.Text;
 using System.Security.Cryptography;
 using AnicStockControl.Exceptions;
-using MySql.Data.MySqlClient;
 using AnicStockControl.Data;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace AnicStockControl.Entities
 {
     public class User
     {
-        public int Id_user { get; set; }
-        public string First_name { get; set; }
-        public string Last_name { get; set; }
+        public int Id { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        private static readonly string ConnectionString = "server=localhost;user id=Developer;password=192837;database=db_anicstockcontrol";
-        private MySqlConnection Connection { get; set; } = new MySqlConnection(ConnectionString);
-        private MySqlCommand Command { get; set; }
+
         public User()
         {
         
@@ -50,7 +44,7 @@ namespace AnicStockControl.Entities
                 {
                     context.RecordUserActions.Add(new RecordUserAction
                     {
-                        UserId = Id_user,
+                        UserId = Id,
                         Action = "Login",
                         Date = DateTime.Now
                     });

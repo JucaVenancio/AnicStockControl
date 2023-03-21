@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Configuration;
 using AnicStockControl.Entities;
-using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
-using System.Runtime.Remoting.Channels;
+using Microsoft.EntityFrameworkCore;
+using MySQL.Data.EntityFrameworkCore;
 using System.IO;
+using System.Data.Entity.Migrations.Model;
 
 namespace AnicStockControl.Data
 {
@@ -14,7 +14,7 @@ namespace AnicStockControl.Data
         public DbSet<User> Users { get; set; }
         public DbSet<RecordUserAction> RecordUserActions { get; set; }
 
-        public AnicStockControlContext()
+        public AnicStockControlContext()        
         {
         }
         public AnicStockControlContext(DbContextOptions<AnicStockControlContext> options)
@@ -22,16 +22,24 @@ namespace AnicStockControl.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Item>()
+                .HasKey(i => i.Code);
+            modelBuilder.Entity<User>()
+                .HasKey(u => u.Id);
+            modelBuilder.Entity<RecordUserAction>()
+                .HasKey(r => r.Id);
+            modelBuilder.Entity<RecordUserAction>()
+                .HasOne(r => r.User)
+                .WithMany()
+                .HasForeignKey(r => r.UserId);
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var configuration = new ConfigurationBuilder()
-                 .SetBasePath(Directory.GetCurrentDirectory())
-                 .AddJsonFile("appsettings.json")
-                 .Build();
-
-            var connectionString = configuration.GetConnectionString("AnicStockControlContext");
+            var connectionString = ConfigurationManager.ConnectionStrings["AnicStockControlContext"].ConnectionString;
             optionsBuilder.UseMySql(connectionString);
-
+            
         }
     }
 }
