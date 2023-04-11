@@ -18,7 +18,6 @@ C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\b
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.Configuration.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.dll
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.Configuration.Json.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.dll
@@ -44,7 +43,6 @@ C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\b
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Text.Json.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.ValueTuple.dll
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\ZstdNet.dll
@@ -66,7 +64,6 @@ C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\b
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.Configuration.FileExtensions.xml
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.Configuration.Json.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.xml
@@ -89,7 +86,6 @@ C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\b
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Text.Json.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.ValueTuple.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.csproj.AssemblyReference.cache

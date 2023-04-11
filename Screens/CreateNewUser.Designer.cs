@@ -33,9 +33,9 @@ namespace AnicStockControl.Screens
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewUser));
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
-            this.NameLabel = new System.Windows.Forms.Label();
+            this.FirstNameLabel = new System.Windows.Forms.Label();
             this.LastNameLabel = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
@@ -64,14 +64,14 @@ namespace AnicStockControl.Screens
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password";
             // 
-            // NameLabel
+            // FirstNameLabel
             // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(30, 42);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(68, 25);
-            this.NameLabel.TabIndex = 2;
-            this.NameLabel.Text = "Name";
+            this.FirstNameLabel.AutoSize = true;
+            this.FirstNameLabel.Location = new System.Drawing.Point(30, 42);
+            this.FirstNameLabel.Name = "FirstNameLabel";
+            this.FirstNameLabel.Size = new System.Drawing.Size(68, 25);
+            this.FirstNameLabel.TabIndex = 2;
+            this.FirstNameLabel.Text = "Name";
             // 
             // LastNameLabel
             // 
@@ -82,20 +82,20 @@ namespace AnicStockControl.Screens
             this.LastNameLabel.TabIndex = 3;
             this.LastNameLabel.Text = "Last Name";
             // 
-            // NameTextBox
+            // FirstNameTextBox
             // 
-            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NameTextBox.Location = new System.Drawing.Point(111, 44);
-            this.NameTextBox.MaxLength = 20;
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(142, 23);
-            this.NameTextBox.TabIndex = 4;
+            this.FirstNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FirstNameTextBox.Location = new System.Drawing.Point(111, 44);
+            this.FirstNameTextBox.MaxLength = 10;
+            this.FirstNameTextBox.Name = "FirstNameTextBox";
+            this.FirstNameTextBox.Size = new System.Drawing.Size(142, 23);
+            this.FirstNameTextBox.TabIndex = 4;
             // 
             // LastNameTextBox
             // 
             this.LastNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LastNameTextBox.Location = new System.Drawing.Point(407, 44);
-            this.LastNameTextBox.MaxLength = 20;
+            this.LastNameTextBox.MaxLength = 10;
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(142, 23);
             this.LastNameTextBox.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace AnicStockControl.Screens
             // 
             this.UsernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UsernameTextBox.Location = new System.Drawing.Point(111, 96);
-            this.UsernameTextBox.MaxLength = 15;
+            this.UsernameTextBox.MaxLength = 10;
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(142, 23);
             this.UsernameTextBox.TabIndex = 6;
@@ -122,9 +122,9 @@ namespace AnicStockControl.Screens
             // RegisterGroupBox
             // 
             this.RegisterGroupBox.Controls.Add(this.ErrorLabel);
-            this.RegisterGroupBox.Controls.Add(this.NameLabel);
+            this.RegisterGroupBox.Controls.Add(this.FirstNameLabel);
             this.RegisterGroupBox.Controls.Add(this.BtnSave);
-            this.RegisterGroupBox.Controls.Add(this.NameTextBox);
+            this.RegisterGroupBox.Controls.Add(this.FirstNameTextBox);
             this.RegisterGroupBox.Controls.Add(this.PasswordTextBox);
             this.RegisterGroupBox.Controls.Add(this.UsernameTextBox);
             this.RegisterGroupBox.Controls.Add(this.BtnBackHome);
@@ -147,7 +147,7 @@ namespace AnicStockControl.Screens
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.ErrorLabel.Location = new System.Drawing.Point(123, 180);
+            this.ErrorLabel.Location = new System.Drawing.Point(171, 182);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(52, 20);
             this.ErrorLabel.TabIndex = 11;
@@ -191,7 +191,6 @@ namespace AnicStockControl.Screens
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New User";
-            this.Load += new System.EventHandler(this.CreateNewUser_Load);
             this.RegisterGroupBox.ResumeLayout(false);
             this.RegisterGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -202,9 +201,9 @@ namespace AnicStockControl.Screens
 
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label PasswordLabel;
-        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.Label LastNameLabel;
-        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.TextBox FirstNameTextBox;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.TextBox UsernameTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;

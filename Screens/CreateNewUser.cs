@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Linq;
 using AnicStockControl.Exceptions;
 using AnicStockControl.Entities;
+using AnicStockControl.Utilites;
 
 namespace AnicStockControl.Screens
 {
@@ -15,47 +16,35 @@ namespace AnicStockControl.Screens
 
         private void BtnBackHome_Click(object sender, EventArgs e)
         {
-            FormCollection fc = Application.OpenForms;
-            foreach (Form f in fc)
-            {
-                if (!f.Visible)
-                {
-                    f.Show();
-                }
-            }
-
             this.Close();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            /*Users user = new Users { First_name = NameTextBox.Text, Last_name = LastNameTextBox.Text, Username = UsernameTextBox.Text, Password = PasswordTextBox.Text };
-            string MessageError = "";
-
+            TextBox[] Fields = new TextBox[] {FirstNameTextBox, LastNameTextBox, UsernameTextBox, PasswordTextBox};
             try
             {
-
-
-                if (user.Insert_or_Change_Users(ref MessageError))
+                if (AnicValidate.ValidateField(Fields))
                 {
-                    MessageBox.Show("Usuário cadastrado com sucesso!");
+                    User user = new User(Fields[0].Text, Fields[1].Text, Fields[2].Text, Fields[3].Text);
+                    if (user.Insert_or_Change_Users())
+                    {
+                        MessageBox.Show("User: " + user.Firstname + " " + user.Lastname + "/n|Registered Successfully|");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Teste");
+                    }
                 }
-                else
-                {
-                    throw new LoginException(MessageError);
-                }
+              
             }
-            catch (LoginException ex)
+            catch (ValidateExceptions ex)
             {
                 ErrorLabel.Text = ex.Message;
                 ErrorLabel.Visible = true;
-            }*/
+            }
         }
 
-        private void CreateNewUser_Load(object sender, EventArgs e)
-        {
-        
-
-        }
     }
 }

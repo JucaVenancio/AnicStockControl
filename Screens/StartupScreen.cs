@@ -6,25 +6,15 @@ namespace AnicStockControl.Screens
     public partial class StartupScreen : Form
     {
         public StartupScreen()
-        {
+        { 
             InitializeComponent();
-        }
-
-        private void StartupScreen_Load(object sender, EventArgs e)
-        {
-            FormCollection fc = Application.OpenForms;
-            foreach (Form f in fc)
-            {
-                if (!(fc.Count > 2))
-                {
-                    MessageBox.Show("Teste start");
-                }
-            }
+            
         }
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
             HomeScreen homeScreen = new HomeScreen();
+            homeScreen.FormClosed += (s, args) => this.Show();
             homeScreen.Show();
         }
 
@@ -32,6 +22,7 @@ namespace AnicStockControl.Screens
         {
             this.Hide();
             CreateNewUser createNewUser = new CreateNewUser();
+            createNewUser.FormClosed+= (s, args) => this.Show();
             createNewUser.Show();
         }
 

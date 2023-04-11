@@ -18,31 +18,26 @@ namespace AnicStockControl
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            User user = new User { Username = UsernameTextBox.Text, Password = PasswordTextBox.Text };
+            User user = new User(UsernameTextBox.Text, PasswordTextBox.Text);
             try
             {
-                if (user.Login_Validation())
+                if (user.User_Exists())
                 {
                     MessageBox.Show("Deu certo!");
-
-
                 }
                 else
                 {
-                    MessageBox.Show("Deu errado!");
+                    throw new LoginExceptions("Error not identify!!");
                 }
-             }catch (Exception ex) 
+             }catch (LoginExceptions ex) 
             {
                 MessageBox.Show(ex.Message);
             }
 
         }
 
-        private void BtnNewUser_Click(object sender, EventArgs e)
+        private void BtnBackHome_Click(object sender, EventArgs e)
         {
-            
-            CreateNewUser createNewUsser =  new CreateNewUser();
-            createNewUsser.Show();
             this.Close();
         }
 

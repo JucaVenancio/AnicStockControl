@@ -39,7 +39,7 @@ namespace AnicStockControl
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.BtnChangePassword = new System.Windows.Forms.Button();
-            this.BtnNewUser = new System.Windows.Forms.Button();
+            this.BtnBackHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login
@@ -133,17 +133,17 @@ namespace AnicStockControl
             this.BtnChangePassword.UseVisualStyleBackColor = false;
             this.BtnChangePassword.Click += new System.EventHandler(this.BtnChangePassword_Click);
             // 
-            // BtnNewUser
+            // BtnBackHome
             // 
-            this.BtnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNewUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BtnNewUser.Location = new System.Drawing.Point(41, 447);
-            this.BtnNewUser.Name = "BtnNewUser";
-            this.BtnNewUser.Size = new System.Drawing.Size(114, 41);
-            this.BtnNewUser.TabIndex = 7;
-            this.BtnNewUser.Text = "NEW USER";
-            this.BtnNewUser.UseVisualStyleBackColor = true;
-            this.BtnNewUser.Click += new System.EventHandler(this.BtnNewUser_Click);
+            this.BtnBackHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBackHome.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BtnBackHome.Location = new System.Drawing.Point(41, 447);
+            this.BtnBackHome.Name = "BtnBackHome";
+            this.BtnBackHome.Size = new System.Drawing.Size(114, 41);
+            this.BtnBackHome.TabIndex = 7;
+            this.BtnBackHome.Text = "BACK HOME";
+            this.BtnBackHome.UseVisualStyleBackColor = true;
+            this.BtnBackHome.Click += new System.EventHandler(this.BtnBackHome_Click);
             // 
             // HomeScreen
             // 
@@ -154,7 +154,7 @@ namespace AnicStockControl
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(876, 500);
             this.Controls.Add(this.BtnChangePassword);
-            this.Controls.Add(this.BtnNewUser);
+            this.Controls.Add(this.BtnBackHome);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
@@ -185,7 +185,7 @@ namespace AnicStockControl
         private Label PasswordLabel;
         private Button BtnLogin;
         private Button BtnChangePassword;
-        private Button BtnNewUser;
+        private Button BtnBackHome;
     }
 }
 
