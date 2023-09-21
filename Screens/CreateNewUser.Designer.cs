@@ -40,7 +40,6 @@ namespace AnicStockControl.Screens
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.RegisterGroupBox = new System.Windows.Forms.GroupBox();
-            this.ErrorLabel = new System.Windows.Forms.Label();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnBackHome = new System.Windows.Forms.Button();
             this.RegisterGroupBox.SuspendLayout();
@@ -121,7 +120,6 @@ namespace AnicStockControl.Screens
             // 
             // RegisterGroupBox
             // 
-            this.RegisterGroupBox.Controls.Add(this.ErrorLabel);
             this.RegisterGroupBox.Controls.Add(this.FirstNameLabel);
             this.RegisterGroupBox.Controls.Add(this.BtnSave);
             this.RegisterGroupBox.Controls.Add(this.FirstNameTextBox);
@@ -139,21 +137,6 @@ namespace AnicStockControl.Screens
             this.RegisterGroupBox.Size = new System.Drawing.Size(608, 334);
             this.RegisterGroupBox.TabIndex = 9;
             this.RegisterGroupBox.TabStop = false;
-            // 
-            // ErrorLabel
-            // 
-            this.ErrorLabel.AllowDrop = true;
-            this.ErrorLabel.AutoEllipsis = true;
-            this.ErrorLabel.AutoSize = true;
-            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.ErrorLabel.Location = new System.Drawing.Point(171, 182);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(52, 20);
-            this.ErrorLabel.TabIndex = 11;
-            this.ErrorLabel.Text = "Error";
-            this.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ErrorLabel.Visible = false;
             // 
             // BtnSave
             // 
@@ -210,6 +193,5 @@ namespace AnicStockControl.Screens
         private System.Windows.Forms.GroupBox RegisterGroupBox;
         private System.Windows.Forms.Button BtnBackHome;
         private System.Windows.Forms.Button BtnSave;
-        private System.Windows.Forms.Label ErrorLabel;
     }
 }

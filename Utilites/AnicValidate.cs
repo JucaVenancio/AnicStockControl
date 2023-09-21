@@ -6,36 +6,52 @@ namespace AnicStockControl.Utilites
     internal static class AnicValidate
     {
         
-        public static bool ValidateField(TextBox[] values)
+        public static bool ValidateFields(TextBox[] textBoxes)
         {
-            bool aux = false;
-            foreach (TextBox t in values)
-            {
-                int min = 3;
-                int max = t.MaxLength;
+            bool allFieldsValid = true;
 
-                if (!string.IsNullOrEmpty(t.Text))
+            foreach (TextBox textBox in textBoxes)
+            {
+                Label errorLabel = new Label();
+                errorLabel.ForeColor = System.Drawing.Color.Red;
+                errorLabel.Font = new System.Drawing.Font(System.Drawing.Font, 7.8f);
+                errorLabel.Location = new System.Drawing.Point(textBox.Left - 5, textBox.Bottom + 5);
+                errorLabel.AutoSize = true;
+
+                int min = 4;
+                int max = textBox.MaxLength;
+
+                if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    if (t.Text.Length > min && t.Text.Length <= max)
-                    {
-                        aux = true;
-                    }
-                    else
-                    {
-                        aux = false;
-                        throw new ValidateExceptions("Only Min " + min + " and Max " + max + " characters are allowed");
-                    }
+                    errorLabel.Text = "Field cannot be blank";
+                    allFieldsValid = false;  
                 }
-                else
+                else if (textBox.Text.Length < min || textBox.Text.Length > max)
                 {
-                    aux = false;
-                    throw new ValidateExceptions("The field its empty!");
+                    errorLabel.Text = $"Must be between {min} and {max} characters";
+                    allFieldsValid = false;
                 }
+
+                RemoveErrorLabel(textBox);
+                textBox.Parent.Controls.Add(errorLabel);               
             }
 
-            return aux;
+
+            return allFieldsValid;
         }
 
+        public static void RemoveErrorLabel(Control control) 
+        {
+            foreach(Control child in control.Parent.Controls)
+            {
+                if(child is Label && child.ForeColor == System.Drawing.Color.Red)
+                {
+                    control.Parent.Controls.Remove(child);
+                    break;
+                }
+            }
+            
+        }
 
     }
 }

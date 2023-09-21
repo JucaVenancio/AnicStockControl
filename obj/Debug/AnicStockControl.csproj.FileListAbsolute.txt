@@ -89,7 +89,6 @@ C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\b
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\bin\Debug\System.ValueTuple.xml
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.csproj.AssemblyReference.cache
-C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.csproj.SuggestedBindingRedirects.cache
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.Screens.CreateNewUser.resources
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.HomeScreen.resources
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.Properties.Resources.resources

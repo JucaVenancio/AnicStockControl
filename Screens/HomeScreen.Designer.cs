@@ -48,7 +48,7 @@ namespace AnicStockControl
             this.Login.BackColor = System.Drawing.Color.Transparent;
             this.Login.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.ForeColor = System.Drawing.Color.Black;
-            this.Login.Location = new System.Drawing.Point(412, 143);
+            this.Login.Location = new System.Drawing.Point(404, 142);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(71, 22);
             this.Login.TabIndex = 0;

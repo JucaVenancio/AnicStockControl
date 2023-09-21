@@ -5,6 +5,9 @@ using AnicStockControl.Exceptions;
 using AnicStockControl.Data;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore.Internal;
+using System.Runtime.Remoting.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace AnicStockControl.Entities
 {
@@ -37,7 +40,7 @@ namespace AnicStockControl.Entities
 
                 for (int i = 0; i < bytes.Length; i++)
                 {
-                    sb.Append(bytes[i].ToString("x23"));
+                    sb.Append(bytes[i].ToString("x2"));
                 }
 
                 return sb.ToString();
@@ -45,36 +48,64 @@ namespace AnicStockControl.Entities
         }
         public bool User_Exists()
         {
+            Console.WriteLine("Initializing User Validation...");
+            bool Validation = false;
+
             using (AnicStockControlContext context = new AnicStockControlContext())
             {
-                User user = context.Users.FirstOrDefault(u => u.Username == GetSHA256Hash(this.Username));
-                bool Validation = false;
-                if (!String.IsNullOrEmpty(user.Username))
+                Validation = context.Users.Any(u => u.Username == GetSHA256Hash(this.Username));
+
+                if (Validation == true)
                 {
-                    /*context.RecordUserActions.Add(new RecordUserAction
-                    {
-                        UserId = Id,
-                        Action = "Login",
-                        Date = DateTime.Now
-                    });
-                    context.SaveChanges();*/
-                    Validation = true;
+                    Console.WriteLine("Validation Successful!!");
                 }
                 else
                 {
-                    Validation = false;
-                }
+                    Console.WriteLine("Validation Fail!");
 
-                return Validation;
+                }
             }
 
-            
+            return Validation;
+        }
+
+        public bool Password_Validate()
+        {
+
+            Console.WriteLine("Initializing Password Validation...");
+            bool Validate = false;
+
+            using (AnicStockControlContext context = new AnicStockControlContext())
+            {
+
+                Validate = context.Users.Any(u => u.Password + u.Username == GetSHA256Hash(this.Password) + GetSHA256Hash(this.Username));
+                
+                if (Validate == true)
+                {
+                    Console.WriteLine("Validate Successful!!");
+                }
+                else
+                {
+                    Console.WriteLine("Validate Fail!");
+                }
+
+
+            }
+
+            return Validate;
         }
 
         public bool Insert_or_Change_Users()
         {
+            Username = GetSHA256Hash(this.Username);
+            Password = GetSHA256Hash(this.Password);
 
             if (User_Exists())
+            {
+                MessageBox.Show("The username already exists");
+                return false;
+            }
+            else
             {
                 using (AnicStockControlContext context = new AnicStockControlContext())
                 {
@@ -83,11 +114,6 @@ namespace AnicStockControl.Entities
                     return true;
                 }
             }
-            else
-            {
-                throw new ValidateExceptions("The username already exists!");
-            }
         }
-
     }
 }

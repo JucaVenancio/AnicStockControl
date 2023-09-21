@@ -21,28 +21,21 @@ namespace AnicStockControl.Screens
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            TextBox[] Fields = new TextBox[] {FirstNameTextBox, LastNameTextBox, UsernameTextBox, PasswordTextBox};
-            try
-            {
-                if (AnicValidate.ValidateField(Fields))
-                {
-                    User user = new User(Fields[0].Text, Fields[1].Text, Fields[2].Text, Fields[3].Text);
-                    if (user.Insert_or_Change_Users())
-                    {
-                        MessageBox.Show("User: " + user.Firstname + " " + user.Lastname + "/n|Registered Successfully|");
+            TextBox[] Fields = new TextBox[] { FirstNameTextBox, LastNameTextBox, UsernameTextBox, PasswordTextBox };
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Teste");
-                    }
-                }
-              
-            }
-            catch (ValidateExceptions ex)
+            if (AnicValidate.ValidateFields(Fields)) 
             {
-                ErrorLabel.Text = ex.Message;
-                ErrorLabel.Visible = true;
+                User user = new User(Fields[0].Text, Fields[1].Text, Fields[2].Text, Fields[3].Text);
+
+                if (user.Insert_or_Change_Users())
+                {
+                    MessageBox.Show($"User: {user.Firstname} {user.Lastname} \n---|Registered Successfully|---");
+
+                }
+                else
+                {
+                    MessageBox.Show("Teste");
+                }
             }
         }
 
