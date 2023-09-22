@@ -28,8 +28,8 @@ namespace AnicStockControl.Entities
         {
             Firstname = firstname;
             Lastname = lastname;
-            Username = username;
-            Password = password;
+            Username = username.ToLower();
+            Password = password.ToLower();
         }
         private static string GetSHA256Hash(string input)
         {
@@ -79,7 +79,7 @@ namespace AnicStockControl.Entities
             {
 
                 Validate = context.Users.Any(u => u.Password + u.Username == GetSHA256Hash(this.Password) + GetSHA256Hash(this.Username));
-                
+
                 if (Validate == true)
                 {
                     Console.WriteLine("Validate Successful!!");
@@ -95,24 +95,15 @@ namespace AnicStockControl.Entities
             return Validate;
         }
 
-        public bool Insert_or_Change_Users()
+        public void Insert_or_Change_Users()
         {
             Username = GetSHA256Hash(this.Username);
             Password = GetSHA256Hash(this.Password);
 
-            if (User_Exists())
+            using (AnicStockControlContext context = new AnicStockControlContext())
             {
-                MessageBox.Show("The username already exists");
-                return false;
-            }
-            else
-            {
-                using (AnicStockControlContext context = new AnicStockControlContext())
-                {
-                    context.Users.Add(this);
-                    context.SaveChanges();
-                    return true;
-                }
+                context.Users.Add(this);
+                context.SaveChanges();
             }
         }
     }

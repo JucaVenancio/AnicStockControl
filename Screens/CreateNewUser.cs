@@ -23,19 +23,12 @@ namespace AnicStockControl.Screens
         {
             TextBox[] Fields = new TextBox[] { FirstNameTextBox, LastNameTextBox, UsernameTextBox, PasswordTextBox };
 
-            if (AnicValidate.ValidateFields(Fields)) 
+            User user = new User(FirstNameTextBox.Text, LastNameTextBox.Text, UsernameTextBox.Text, PasswordTextBox.Text);
+
+            if (AnicValidate.ValidateFields(Fields, user)) 
             {
-                User user = new User(Fields[0].Text, Fields[1].Text, Fields[2].Text, Fields[3].Text);
-
-                if (user.Insert_or_Change_Users())
-                {
-                    MessageBox.Show($"User: {user.Firstname} {user.Lastname} \n---|Registered Successfully|---");
-
-                }
-                else
-                {
-                    MessageBox.Show("Teste");
-                }
+                user.Insert_or_Change_Users();
+                MessageBox.Show($"User: {user.Firstname} {user.Lastname} \n---|Registered Successfully|---");
             }
         }
 

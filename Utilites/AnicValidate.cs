@@ -1,20 +1,24 @@
-﻿using AnicStockControl.Exceptions;
+﻿using AnicStockControl.Entities;
 using System.Windows.Forms;
+
 
 namespace AnicStockControl.Utilites
 {
     internal static class AnicValidate
     {
         
-        public static bool ValidateFields(TextBox[] textBoxes)
+        public static bool ValidateFields(TextBox[] textBoxes, User user)
         {
             bool allFieldsValid = true;
+
+            foreach (TextBox textbox in textBoxes) { RemoveErrorLabel(textbox); }
 
             foreach (TextBox textBox in textBoxes)
             {
                 Label errorLabel = new Label();
+                errorLabel = new Label();
                 errorLabel.ForeColor = System.Drawing.Color.Red;
-                errorLabel.Font = new System.Drawing.Font(System.Drawing.Font, 7.8f);
+                errorLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 6.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 errorLabel.Location = new System.Drawing.Point(textBox.Left - 5, textBox.Bottom + 5);
                 errorLabel.AutoSize = true;
 
@@ -24,18 +28,21 @@ namespace AnicStockControl.Utilites
                 if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
                     errorLabel.Text = "Field cannot be blank";
-                    allFieldsValid = false;  
+                    allFieldsValid = false;
                 }
                 else if (textBox.Text.Length < min || textBox.Text.Length > max)
                 {
                     errorLabel.Text = $"Must be between {min} and {max} characters";
                     allFieldsValid = false;
                 }
+                else if (user.User_Exists() && textBox.Name == "UsernameTextBox")
+                {
+                    errorLabel.Text = $"The username already exists" ;
+                    allFieldsValid = false;
+                }
 
-                RemoveErrorLabel(textBox);
-                textBox.Parent.Controls.Add(errorLabel);               
+                textBox.Parent.Controls.Add(errorLabel);
             }
-
 
             return allFieldsValid;
         }
