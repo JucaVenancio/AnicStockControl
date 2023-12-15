@@ -98,3 +98,4 @@ C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\o
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.csproj.CopyComplete
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.exe
 C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.pdb
+C:\Users\juc19\OneDrive\Área de Trabalho\Estudos\Projects\C#\AnicStockControl\obj\Debug\AnicStockControl.Screens.UserScreen.resources

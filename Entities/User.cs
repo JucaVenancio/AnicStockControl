@@ -3,6 +3,7 @@ using System.Text;
 using System.Security.Cryptography;
 using AnicStockControl.Exceptions;
 using AnicStockControl.Data;
+using AnicStockControl.Enums;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -19,17 +20,20 @@ namespace AnicStockControl.Entities
         public string Username { get; private set; }
         public string Password { get; private set; }
 
+        public string User_Type { get; private set; }
+
         public User(string username, string password)
         {
             Username = username;
             Password = password;
         }
-        public User(string firstname, string lastname, string username, string password)
+        public User(string firstname, string lastname, string username, string password, string user_Type)
         {
             Firstname = firstname;
             Lastname = lastname;
             Username = username.ToLower();
             Password = password.ToLower();
+            User_Type = user_Type;
         }
         private static string GetSHA256Hash(string input)
         {
@@ -48,7 +52,7 @@ namespace AnicStockControl.Entities
         }
         public bool User_Exists()
         {
-            Console.WriteLine("Initializing User Validation...");
+            Console.WriteLine("[Initializing user validation...]");
             bool Validation = false;
 
             using (AnicStockControlContext context = new AnicStockControlContext())
@@ -57,11 +61,11 @@ namespace AnicStockControl.Entities
 
                 if (Validation == true)
                 {
-                    Console.WriteLine("Validation Successful!!");
+                    Console.WriteLine("[Validation successful]");
                 }
                 else
                 {
-                    Console.WriteLine("Validation Fail!");
+                    Console.WriteLine("[Validation fail]");
 
                 }
             }
@@ -72,7 +76,7 @@ namespace AnicStockControl.Entities
         public bool Password_Validate()
         {
 
-            Console.WriteLine("Initializing Password Validation...");
+            Console.WriteLine("[Initializing password validation...]");
             bool Validate = false;
 
             using (AnicStockControlContext context = new AnicStockControlContext())
@@ -82,11 +86,11 @@ namespace AnicStockControl.Entities
 
                 if (Validate == true)
                 {
-                    Console.WriteLine("Validate Successful!!");
+                    Console.WriteLine("[Validate successful]");
                 }
                 else
                 {
-                    Console.WriteLine("Validate Fail!");
+                    Console.WriteLine("[Validate fail]");
                 }
 
 
@@ -97,6 +101,8 @@ namespace AnicStockControl.Entities
 
         public void Insert_or_Change_Users()
         {
+            Console.WriteLine("[Initializing insert or change user...]");
+
             Username = GetSHA256Hash(this.Username);
             Password = GetSHA256Hash(this.Password);
 
@@ -104,6 +110,7 @@ namespace AnicStockControl.Entities
             {
                 context.Users.Add(this);
                 context.SaveChanges();
+                Console.WriteLine("[Insert or change done successful]");
             }
         }
     }

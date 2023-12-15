@@ -4,6 +4,10 @@ using System.Linq;
 using AnicStockControl.Exceptions;
 using AnicStockControl.Entities;
 using AnicStockControl.Utilites;
+using AnicStockControl.Enums;
+using Org.BouncyCastle.Bcpg;
+using System.Runtime.CompilerServices;
+using System.Linq.Expressions;
 
 namespace AnicStockControl.Screens
 {
@@ -21,14 +25,22 @@ namespace AnicStockControl.Screens
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            TextBox[] Fields = new TextBox[] { FirstNameTextBox, LastNameTextBox, UsernameTextBox, PasswordTextBox };
+            UserType userType = (UserType)this.UserTypeBox.SelectedIndex;
+            this.UserTypeTextBox.Text = userType.ToString();
 
-            User user = new User(FirstNameTextBox.Text, LastNameTextBox.Text, UsernameTextBox.Text, PasswordTextBox.Text);
+            TextBox[] Fields = new TextBox[] { FirstNameTextBox, LastNameTextBox, UsernameTextBox, PasswordTextBox, UserTypeTextBox };
 
-            if (AnicValidate.ValidateFields(Fields, user)) 
+            User user = new User(FirstNameTextBox.Text, LastNameTextBox.Text, UsernameTextBox.Text, PasswordTextBox.Text, UserTypeTextBox.Text);
+
+            if (AnicValidate.ValidateFields(Fields, user))
             {
                 user.Insert_or_Change_Users();
                 MessageBox.Show($"User: {user.Firstname} {user.Lastname} \n---|Registered Successfully|---");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong, please check the fields and try again");
             }
         }
 

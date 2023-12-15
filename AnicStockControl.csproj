@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>AnicStockControl.Program</StartupObject>
@@ -232,6 +234,7 @@
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\RecordUserAction.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Enums\UserType.cs" />
     <Compile Include="Exceptions\LoginExceptions.cs" />
     <Compile Include="Exceptions\ValidateExceptions.cs" />
     <Compile Include="Screens\CreateNewUser.cs">
@@ -254,6 +257,12 @@
     <Compile Include="Screens\StartupScreen.Designer.cs">
       <DependentUpon>StartupScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UserScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\UserScreen.Designer.cs">
+      <DependentUpon>UserScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilites\AnicValidate.cs" />
     <EmbeddedResource Include="Screens\CreateNewUser.resx">
       <DependentUpon>CreateNewUser.cs</DependentUpon>
@@ -273,6 +282,9 @@
     </Compile>
     <EmbeddedResource Include="Screens\StartupScreen.resx">
       <DependentUpon>StartupScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UserScreen.resx">
+      <DependentUpon>UserScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
