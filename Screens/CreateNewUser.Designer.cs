@@ -31,7 +31,6 @@ namespace AnicStockControl.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            this.UserTypeBox = new System.Windows.Forms.ComboBox();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewUser));
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@ namespace AnicStockControl.Screens
             this.UserTypeLabel = new System.Windows.Forms.Label();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnBackHome = new System.Windows.Forms.Button();
+            this.UserTypeBox = new System.Windows.Forms.ComboBox();
             this.RegisterGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 

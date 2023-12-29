@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore.Internal;
 using System.Runtime.Remoting.Contexts;
 using Microsoft.EntityFrameworkCore;
+using AnicStockControl.Screens;
 
 namespace AnicStockControl.Entities
 {
@@ -35,6 +36,11 @@ namespace AnicStockControl.Entities
             Password = password.ToLower();
             User_Type = user_Type;
         }
+
+        public User()
+        {
+        }
+
         private static string GetSHA256Hash(string input)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -61,6 +67,7 @@ namespace AnicStockControl.Entities
 
                 if (Validation == true)
                 {
+
                     Console.WriteLine("[Validation successful]");
                 }
                 else
@@ -105,13 +112,35 @@ namespace AnicStockControl.Entities
 
             Username = GetSHA256Hash(this.Username);
             Password = GetSHA256Hash(this.Password);
-
             using (AnicStockControlContext context = new AnicStockControlContext())
             {
                 context.Users.Add(this);
                 context.SaveChanges();
                 Console.WriteLine("[Insert or change done successful]");
             }
+        }
+
+        public void Login()
+        {
+            try
+            {
+                if (this.User_Exists() && this.Password_Validate())
+                {
+                    using (AnicStockControlContext context = new AnicStockControlContext())
+                    {
+                        User user =  context.Users.Cast<User>().FirstOrDefault(u => u.Username + u.Password == this.Password + this.Username);
+                    }
+                }
+                else
+                {
+                    throw new LoginExceptions("User not found!!");
+                }
+            }
+            catch (LoginExceptions ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

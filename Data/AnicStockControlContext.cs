@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MySQL.Data.EntityFrameworkCore;
 using System.IO;
 using System.Data.Entity.Migrations.Model;
+using System;
 
 namespace AnicStockControl.Data
 {
@@ -40,6 +41,11 @@ namespace AnicStockControl.Data
             var connectionString = ConfigurationManager.ConnectionStrings["AnicStockControlContext"].ConnectionString;
             optionsBuilder.UseMySql(connectionString);
             
+        }
+
+        internal void Query<T>(T sqlQuery)
+        {
+            throw new NotImplementedException();
         }
     }
 }
