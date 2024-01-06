@@ -16,7 +16,18 @@ namespace AnicStockControl
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            User user = new User(UsernameTextBox.Text, PasswordTextBox.Text);                
+            try
+            {
+
+                User user = new User(UsernameTextBox.Text, PasswordTextBox.Text);
+                user =  user.Login();
+                UserScreen userScreen = new UserScreen(user);
+                userScreen.Show();
+
+            }catch(LoginExceptions ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
               
 
         }
